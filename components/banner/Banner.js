@@ -16,7 +16,7 @@ const Banner = () => {
         className="absolute w-full text-center
        px-3  top-1/2 z-30 "
       >
-        <p className="text-black font-bold text-2xl lg:text-7xl ">
+        <p className="text-white font-bold text-2xl lg:text-7xl ">
           Olympian & ParaLympian Online Experiences
         </p>
         <button

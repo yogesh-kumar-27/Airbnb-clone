@@ -1,5 +1,4 @@
 import Head from "next/head";
-import image from "next/image";
 import Banner from "../components/banner/Banner";
 import Discovercard from "../components/card/Discovercard";
 import Largecard from "../components/card/Largecard";
@@ -23,7 +22,7 @@ export default function Home({ exploreData, cardsData }) {
       {/* Banner */}
       <Banner />
 
-      <main className="max-w-screen-2xl py-10 mx-auto px-9 sm:px-16  bg-white shadow-sm">
+      <main className="max-w-screen-2xl mx-auto px-8 p-10  m-5 shadow-xl sm:px-16">
         <section className="pt-6 ">
           <h2
             className="text-2xl font-sans font-semibold
@@ -94,7 +93,7 @@ export default function Home({ exploreData, cardsData }) {
 }
 
 export async function getStaticProps() {
-  const exploreData = await fetch("https://links.papareact.com/pyp").then(
+  const exploreData = await fetch("https://jsonkeeper.com/b/B9GN").then(
     (res) => res.json()
   );
 
