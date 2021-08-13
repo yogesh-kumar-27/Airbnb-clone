@@ -11,7 +11,7 @@ import "react-date-range/dist/theme/default.css"; // theme css file
 
 import { DateRange, DateRangePicker } from "react-date-range";
 import { useRouter } from "next/dist/client/router";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 function Header({ placeholder }) {
   const [searchInput, setSearchInput] = useState("");
@@ -50,30 +50,31 @@ function Header({ placeholder }) {
     endDate: endDate,
     key: "selection",
   };
-    
 
-    useEffect(() => {
-       const listener = () => {
-          if (window.scrollY > 50) {
-            setHandleShow(true); 
-            } else 
-            setHandleShow(false); 
-          }; 
-          window.addEventListener("scroll", listener);
-          
-          return () => { 
-            window.removeEventListener("scroll", listener); 
-          }; 
-        }, []);
-        
+  useEffect(() => {
+    const listener = () => {
+      if (window.scrollY > 50) {
+        setHandleShow(true);
+      } else setHandleShow(false);
+    };
+    window.addEventListener("scroll", listener);
+
+    return () => {
+      window.removeEventListener("scroll", listener);
+    };
+  }, []);
+
   return (
-
-    <header className={`fixed top-0 z-40 grid w-screen grid-cols-1  transition duration-100 ease-out p-5 ${handleShow ? "bg-white shadow-md" : ""} md:grid-cols-3  z-50 grid grid-flow-row grid-cols-2 p-5 md:px-10 sm:grid-cols-3 `}> 
-    {/* fixed w-full top-0 z-50 grid sm:grid-cols-4 grid-cols-1 navbar p-5 md:px-10 false */}
+    <header
+      className={`fixed top-0 z-50 grid w-screen grid-cols-1  transition duration-200 ease-out p-5 ${
+        handleShow ? "bg-white shadow-md" : ""
+      } md:grid-cols-3  z-50 grid grid-flow-row grid-cols-2 p-5 md:px-10 sm:grid-cols-3 `}
+    >
+      {/* fixed w-full top-0 z-50 grid sm:grid-cols-4 grid-cols-1 navbar p-5 md:px-10 false */}
       {/* Left logo */}
       <div
         onClick={() => router.push("/")}
-        className="relative flex items-center  h-7 md:h-10  my-auto cursor-pointer"
+        className="relative flex items-center  h-7 md:h-10  my-auto cursor-pointer animate-bounce"
       >
         <Image
           src="https://links.papareact.com/qd3"
@@ -95,8 +96,10 @@ function Header({ placeholder }) {
       </div>
       {/* Right */}
       <div className="hidden md:flex items-center justify-end space-x-4 text-gray-400">
-        <p className="hidden pl-4 font-bold cursor-pointer md:inline font">Become a host</p>
-        <GlobeAltIcon className="h-6 cursor-pointer" />
+        <p className="hidden pl-4 font-bold cursor-pointer md:inline font">
+          Become a host
+        </p>
+        <GlobeAltIcon className="h-6 cursor-pointer animate-spin" />
 
         <div className="flex items-center p-2 space-x-2 text-gray-400 bg-white border-2 rounded-full">
           <MenuIcon className="h-6 cursor-pointer" />
@@ -108,22 +111,22 @@ function Header({ placeholder }) {
       <div className="absolute md:w-[580px]  top-20 md:left-[20%] lg:left-[30%]  sm:left-[0%] sm:rounded-none sm:right-[5%] z-50">
         {searchInput && (
           <div className="z-50 flex flex-col p-5 mt-5 bg-white shadow-md md:col-span-4 w-max rounded-xl">
-         <div className={"hidden md:inline-flex"}>
-            <DateRangePicker
-              ranges={[selectionRange]}
-              minDate={new Date()}
-              rangeColors={["#FD5B61"]}
-              onChange={handleSelect}
-            />
-          </div>
-          <div className={"md:hidden flex "}>
-            <DateRange
-              ranges={[selectionRange]}
-              minDate={new Date()}
-              rangeColors={["#FD5B61"]}
-              onChange={handleSelect}
-            />
-          </div>
+            <div className={"hidden md:inline-flex"}>
+              <DateRangePicker
+                ranges={[selectionRange]}
+                minDate={new Date()}
+                rangeColors={["#FD5B61"]}
+                onChange={handleSelect}
+              />
+            </div>
+            <div className={"md:hidden flex "}>
+              <DateRange
+                ranges={[selectionRange]}
+                minDate={new Date()}
+                rangeColors={["#FD5B61"]}
+                onChange={handleSelect}
+              />
+            </div>
             <div className="flex w-screen md:w-[580px] items-center border-b mb-4 top-auto right-auto bottom-auto left-auto bg-white">
               <h2 className="flex-grow text-2xl font-semibold">
                 Number of Guests
@@ -139,13 +142,13 @@ function Header({ placeholder }) {
             </div>
             <div className="flex w-screen md:w-[580px]">
               <button
-                className="w-1/2 text-gray-500 hover:shadow-inner md:flex-grow"
+                className="w-1/2 bg-red-400 h-8 text-white hover:bg-white  hover:text-red-400 transition ease-out duration-150 hover:shadow-inner rounded-md md:flex-grow"
                 onClick={resetInput}
               >
                 Cancel
               </button>
               <button
-                className="w-1/2 bg-red-400 h-8 text-white hover:bg-white  hover:text-red-400 hover:shadow-inner rounded-md md:flex-grow"
+                className="w-1/2 bg-red-400 h-8 text-white hover:bg-white  hover:text-red-400 transition ease-out duration-200 hover:shadow-inner rounded-md md:flex-grow"
                 onClick={search}
               >
                 Search

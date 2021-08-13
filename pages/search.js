@@ -4,6 +4,7 @@ import Head from "next/head";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import Infocard from "../components/card/Infocard";
+import Map from "../components/map/Map";
 
 function Search({ searchResults }) {
   const router = useRouter();
@@ -26,8 +27,8 @@ function Search({ searchResults }) {
 
       <main className="flex">
         <section className="flex-grow pt-36 px-6">
-          <p className="text-xs ">
-            300+ Stays - <span className="font-bold">{range}</span>- for{" "}
+          <p className="text-sm lg:text-2xl ">
+            300+ Stays - <span className="font-bold button bg-white text-lg rounded-md">{range}</span>- for{" "}
             {noOfGuests} guests
           </p>
           <h1 className="text-3xl font-semibold mt-2 mb-6">
@@ -39,10 +40,20 @@ function Search({ searchResults }) {
             <p className="button">Price</p>
             <p className="button">Rooms and Beds</p>
             <p className="button">More Filters</p>
-            </div>
+          </div>
           <div className="flex flex-col">
-          {
-              searchResults.map(({ img, location, title, description, star, price, total, long, lat }) => (
+            {searchResults.map(
+              ({
+                img,
+                location,
+                title,
+                description,
+                star,
+                price,
+                total,
+                long,
+                lat,
+              }) => (
                 <Infocard
                   key={img}
                   img={img}
@@ -53,9 +64,13 @@ function Search({ searchResults }) {
                   price={price}
                   total={total}
                 />
-              ))
-            }
+              )
+            )}
           </div>
+        </section>
+
+        <section  className="hidden xl:inline-flex xl:min-w-[600px] mt-36">
+          <Map searchResults={searchResults}/>
         </section>
       </main>
 

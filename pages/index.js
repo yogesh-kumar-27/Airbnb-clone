@@ -14,7 +14,7 @@ export default function Home({ exploreData, cardsData }) {
   return (
     <div>
       <Head>
-        <title>airbnb</title>
+        <title>Airbnb</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* Header */}
@@ -22,7 +22,7 @@ export default function Home({ exploreData, cardsData }) {
       {/* Banner */}
       <Banner />
 
-      <main className="max-w-screen-2xl mx-auto px-8 p-10  m-5 shadow-xl sm:px-16">
+      <main className="max-w-screen-2xl mx-auto px-8 p-10  m-5 shadow-xl sm:px-16 bg-white">
         <section className="pt-6 ">
           <h2
             className="text-2xl font-sans font-semibold
