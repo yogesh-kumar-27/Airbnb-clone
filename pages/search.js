@@ -6,7 +6,7 @@ import Footer from "../components/footer/Footer";
 import Infocard from "../components/card/Infocard";
 import Map from "../components/map/Map";
 
-function Search({ searchResults }) {
+const Search = ({ searchResults }) => {
   const router = useRouter();
   const { location, startDate, endDate, noOfGuests } = router.query;
 
@@ -28,8 +28,11 @@ function Search({ searchResults }) {
       <main className="flex">
         <section className="flex-grow pt-36 px-6">
           <p className="text-sm lg:text-2xl ">
-            300+ Stays - <span className="font-bold button bg-white text-lg rounded-md">{range}</span>- for{" "}
-            {noOfGuests} guests
+            300+ Stays -{" "}
+            <span className="font-bold button bg-white text-lg rounded-md">
+              {range}
+            </span>
+            - for {noOfGuests} guests
           </p>
           <h1 className="text-3xl font-semibold mt-2 mb-6">
             Stays in {location}
@@ -69,15 +72,15 @@ function Search({ searchResults }) {
           </div>
         </section>
 
-        <section  className="hidden xl:inline-flex xl:min-w-[600px] mt-36">
-          <Map searchResults={searchResults}/>
+        <section className="hidden xl:inline-flex xl:min-w-[600px] mt-36">
+          <Map searchResults={searchResults} />
         </section>
       </main>
 
       <Footer />
     </div>
   );
-}
+};
 
 export default Search;
 
