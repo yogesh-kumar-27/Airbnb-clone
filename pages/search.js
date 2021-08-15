@@ -18,7 +18,7 @@ const Search = ({ searchResults }) => {
     <div>
       <Head>
         <title>Airbnb: {location} </title>
-        <link rel="icon" href="/logo.png" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header
         placeholder={` ${location} | ${formatedStartDate} - ${formatedEndDate} | ${noOfGuests} guests`}

@@ -30,7 +30,7 @@ const Infocard = ({img,location,title,description,star,price,total,long,lat}) =>
               <p className="text-lg lg:text-2xl font-semibold pb-2">{price}</p>
               <p className="text-right font-extralight">{total}</p>
               <button className='px-4 py-2 border rounded-full shadow-xl cursor-pointer
-                      hover:shadow-2xl active:scale-9 bg-pink-400 hover:opacity-80 
+                      hover:shadow-2xl active:scale-9 bg-pink-400 hover:bg-pink-500
                          transition duration-100 ease-out '>Book Now</button>
             </div>
           </div>
