@@ -1,4 +1,4 @@
-import Image from "next/image";
+import nightwind from "nightwind/helper"
 
 const Banner = () => {
   return (
@@ -16,13 +16,14 @@ const Banner = () => {
         className="absolute w-full text-center
        px-3  top-1/2 z-30 "
       >
-        <p className="text-white font-bold text-2xl lg:text-7xl ">
+        <p className="text-white font-bold text-2xl lg:text-7xl dark:text-white ">
           Olympian & ParaLympian Online Experiences
         </p>
         <button
           className="p-2 text-sm my-2 bg-white rounded shadow-md 
           hover:shadow-xl active:scale-90 transition-all duration-150
-           hover:animate-bounce ease-in-out"
+           hover:animate-bounce ease-in-out dark:bg-[#FDEFEF] dark:text-[#0F52BA] "
+           onClick={()=> nightwind.toggle()}
         >
           Explore now
         </button>

@@ -8,11 +8,12 @@ import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
 import data from "../data";
 
+
 export default function Home({ exploreData, cardsData }) {
-  console.log(exploreData);
-  console.log(cardsData);
+  // console.log(exploreData);
+  // console.log(cardsData);
   return (
-    <div>
+    <div className='dark:bg-[#11052C]'>
       <Head>
         <title>Airbnb</title>
         <link rel="icon" href="/favicon.ico" />
@@ -22,11 +23,11 @@ export default function Home({ exploreData, cardsData }) {
       {/* Banner */}
       <Banner />
 
-      <main className="max-w-screen-2xl mx-auto px-8 p-10  m-5 shadow-xl sm:px-16 bg-white">
+      <main className="max-w-screen-2xl mx-auto px-8 p-10  m-5 shadow-xl sm:px-16 ">
         <section className="pt-6 ">
           <h2
             className="text-2xl font-sans font-semibold
-            pb-5"
+            pb-5 dark:text-gray-400 "
           >
             Explore nearby
           </h2>
@@ -53,7 +54,7 @@ export default function Home({ exploreData, cardsData }) {
         />
         {/* Discovercard */}
         <section className="">
-          <h2 className="font-semibold text-4xl py-8">Discover things to do</h2>
+          <h2 className="font-semibold text-4xl py-8 dark:text-gray-400">Discover things to do</h2>
           <div
             className="grid grid-cols-1 lg:grid-cols-3 gap-y-3 lg:space-x-4
           p-3"
@@ -70,7 +71,7 @@ export default function Home({ exploreData, cardsData }) {
         </section>
         {/* MediumCard */}
         <section className="">
-          <h2 className="font-semibold text-4xl py-8">Live anywhere</h2>
+          <h2 className="font-semibold text-4xl py-8 dark:text-gray-400">Live anywhere</h2>
           <div
             className="flex space-x-3 overflow-scroll scrollbar-hide
           p-3 -ml-3  rounded-3xl"

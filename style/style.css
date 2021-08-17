@@ -5,7 +5,6 @@
 
 
 @layer components{
-
     
 .footer {
     @apply space-y-4 text-sm text-gray-800 ;
@@ -14,7 +13,7 @@
 .button{
     @apply px-4 py-2 border rounded-full cursor-pointer
     hover:shadow-lg active:scale-95 active:bg-white
-    transition duration-100 ease-out  ;
+    transition duration-100 ease-out dark:text-[#F8F5F1] dark:bg-[#0F1123] dark:hover:bg-[#0A1931] ;
 }
 }
 

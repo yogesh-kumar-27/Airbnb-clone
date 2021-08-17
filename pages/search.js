@@ -15,7 +15,7 @@ const Search = ({ searchResults }) => {
 
   const range = `${formatedStartDate} - ${formatedEndDate}`;
   return (
-    <div>
+    <div className='dark:bg-[#11052C] '>
       <Head>
         <title>Airbnb: {location} </title>
         <link rel="icon" href="/favicon.ico" />
@@ -27,17 +27,17 @@ const Search = ({ searchResults }) => {
 
       <main className="flex">
         <section className="flex-grow pt-36 px-6">
-          <p className="text-sm lg:text-2xl ">
+          <p className="text-sm lg:text-2xl dark:text-[#F8F5F1]  ">
             300+ Stays -{" "}
-            <span className="font-bold button bg-white text-lg rounded-md">
+            <span className="font-bold button bg-white text-lg rounded-md dark:text-[#F8F5F1] dark:bg-[#0F1123] dark:hover:bg-[#0A1931]">
               {range}
             </span>
             - for {noOfGuests} guests
           </p>
-          <h1 className="text-3xl font-semibold mt-2 mb-6">
+          <h1 className="text-3xl font-semibold mt-2 mb-6 dark:text-[#F8F5F1] ">
             Stays in {location}
           </h1>
-          <div className="hidden lg:inline-flex mb-5 space-x-3 text-gray-800 whitespace-norap">
+          <div className="hidden lg:inline-flex mb-5 space-x-3 text-gray-800 whitespace-norap ">
             <p className="button">Cancellation Flexibility</p>
             <p className="button">Type Of Place</p>
             <p className="button">Price</p>
