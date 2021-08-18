@@ -1,4 +1,5 @@
-import nightwind from "nightwind/helper"
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 
 const Banner = () => {
   return (
@@ -23,7 +24,7 @@ const Banner = () => {
           className="p-2 text-sm my-2 bg-white rounded shadow-md 
           hover:shadow-xl active:scale-90 transition-all duration-150
            hover:animate-bounce ease-in-out dark:bg-[#FDEFEF] dark:text-[#0F52BA] "
-           onClick={()=> nightwind.toggle()}
+           
         >
           Explore now
         </button>

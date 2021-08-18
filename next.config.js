@@ -10,4 +10,3 @@ module.exports = {
   },
 };
 
-// fcNA*DGP!Wa@w4#

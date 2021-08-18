@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import Image from "next/image";
 import {
   SearchIcon,
@@ -12,6 +13,8 @@ import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRange, DateRangePicker } from "react-date-range";
 import { useRouter } from "next/dist/client/router";
 import React, { useState, useEffect } from "react";
+import nightwind from "nightwind/helper"
+
 
 function Header({ placeholder }) {
   const [searchInput, setSearchInput] = useState("");
@@ -21,6 +24,7 @@ function Header({ placeholder }) {
   const router = useRouter();
   const [show, setShow] = useState(1);
   const [handleShow, setHandleShow] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   const handleSelect = (ranges) => {
     setStartDate(ranges.selection.startDate);
@@ -97,6 +101,29 @@ function Header({ placeholder }) {
       </div>
       {/* Right */}
       <div className="hidden md:flex items-center justify-end space-x-4 text-gray-400">
+      <button onClick={() => setDarkMode(!darkMode,nightwind.toggle())}
+      >
+          {darkMode ? (
+           
+              <svg className="w-8 h-8 md:w-10 md:h-10 text-yellow-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+          ) : (
+            <svg className="w-8 h-8 md:w-10 md:h-10 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+            />
+          </svg>
+          )}
+        </button> 
         <p className="hidden pl-4 font-bold cursor-pointer md:inline dark:text-gray-300 ">
           Become a host
         </p>
@@ -105,6 +132,7 @@ function Header({ placeholder }) {
         <div className="flex items-center p-2 space-x-2 text-gray-400 bg-white border-2 rounded-full">
           <MenuIcon className="h-6 cursor-pointer dark:text-gray-300" />
           <UserCircleIcon className="h-6 cursor-pointer dark:text-gray-300" />
+       
         </div>
       </div>
 
